@@ -15,3 +15,7 @@ class Parallelepiped:
 
     def countVolume(self):
         return self.width * self.length * self.height
+
+    @staticmethod
+    def info():
+        print('__init__ ' + 'countBaseSquare ' + 'countWidthSideSquare ' + 'countLengthSideSquare ' + 'countVolume')

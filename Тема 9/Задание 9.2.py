@@ -12,4 +12,4 @@ def send_request1(url, params):
         url = url.replace("@", params[p], 1)
         p += 1
     response = requests.get(url)
-    return response.url
+    return response

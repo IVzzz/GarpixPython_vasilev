@@ -30,12 +30,16 @@ if __name__ == '__main__':
     for img_url in paths:
         if img_url[0] == '/':
             img_url = url + img_url
+
         try:
             img_response = requests.get(img_url)
         except:
             continue
+
         if img_response.status_code >= 400:
             continue
+
+        img_type = img_url[img_url.rfind('.'):]
         img_counter += 1
-        with open(f'images/image{img_counter}.jpg', 'wb') as fp:
+        with open(f'images/image{img_counter}{img_type}', 'wb') as fp:
             fp.write(img_response.content)
